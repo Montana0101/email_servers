@@ -54,14 +54,14 @@ def fetchBooks(request):
 	# message_html=MIMEText('shuai123 消灭不开行','plain','utf-8')
 	#将邮件内容，装入邮件信息中
 	
-	html = ''
+	html = '<h2 style="width:700px;display:flex;justify-content:center;align-items:center">点击进行跳转</h2>'
 	for item in content:
     		html =html + '''
-			<main style="width:700px">
-			<a style="display:flex;align-items:center;width:100%;height:80px;border:1px solid rgba(222,222,222,0.7);color:black;text-direction:none;" href={url} target="_blank">
-				<img src="{img}" style="height:60px;width:60px;"/>
-				<div style="width:600px;height:60px;display:flex;flex-direction:column;justify-content:space-between">
-				    <div style="display:flex;justify-content:space-between;width:600px">
+			<main style="width:700px;box-sizing:border-box;margin-top:20px;">
+			<a style="display:flex;align-items:center;width:100%;height:80px;border:1px solid rgba(222,222,222,0.7);color:black;text-decoration:none;" href={url} target="_blank">
+				<img src="{img}" style="height:60px;width:60px;margin:0 20px;"/>
+				<div style="width:580px;padding-right:20px;height:60px;display:flex;flex-direction:column;justify-content:space-between">
+				    <div style="display:flex;justify-content:space-between;width:580px">
 					   <div style="overflow: hidden;text-overflow:ellipsis;white-space:nowrap;width:80%">{title}</div>
 					   <div>{author}</div>
 					</div>
