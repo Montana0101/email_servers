@@ -10,7 +10,7 @@ import os
 
 def fetchBooks(request):
 	body_data = json.loads(request.body.decode())
-	title = ""
+	title = "hey~葛朗台的算板来信"
 	email = ""
 	content = ""
 	source = 'montana0101@qq.com'
@@ -20,7 +20,7 @@ def fetchBooks(request):
 		if body_data['title']:
 			 title = body_data['title']
 		else:
-			 title = 'hey~葛朗台的算板来信'
+			 title = 'hey~（葛朗台的算板）来信'
 	except:
 		print("异常处理~~title")
 
@@ -122,44 +122,3 @@ def fetchBooks(request):
 		response['message'] = '邮件发送失败'
 		return HttpResponse(json.dumps(response),content_type='application/json')	
  
-# email_client = smtplib.SMTP_SSL()
-# email_client.connect(HOST,'465')
-# #设置发送域名，端口465
-# result=email_client.login(FROM,'cquqijpmmpezjegd')#qq
-
-# email_client.sendmail(from_addr=FROM,to_addrs=TO.split(','),msg=message.as_string())
-# #关闭邮件发送客户端
-# email_client.close()
-
-
-# 	CREATE TABLE `user` (
-#    `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '主键',
-#    `stylist_id` int(11) DEFAULT NULL COMMENT '搭配师id',
-#    `mobile` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-#    `gender` tinyint(4) DEFAULT NULL COMMENT '10 男  20 女  30 保密',
-#    `birthday` datetime DEFAULT NULL COMMENT '生日',
-#    `wechat_nickname` varchar(60) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '微信昵称',
-#    `wechat_avatar` varchar(600) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '微信头像',
-#    `open_id` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '微信openid',
-#    `create_time` datetime NOT NULL COMMENT '创建时间',
-#    `update_time` datetime DEFAULT NULL COMMENT '更新时间',
-#    `invited_by` int(11) DEFAULT NULL COMMENT '邀请人小B',
-#    `vip_survey_result_id` int(11) DEFAULT '0',
-#    `height` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-#    `weight` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-#    `stylist_remark` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-#    `blacklist` tinyint(1) DEFAULT '0',
-#    `wechat_mobile` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-#    `balance` decimal(10,3) DEFAULT '0.000',
-#    `real_paid_balance` decimal(10,3) NOT NULL DEFAULT '0.000',
-#    `channel_id` int(11) DEFAULT '0',
-#    `invitation_code` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-#    `superior` int(11) DEFAULT NULL,
-#    `points` int(11) DEFAULT '0',
-#    `open_gid` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-#    PRIMARY KEY (`id`),
-#    UNIQUE KEY `mobile` (`mobile`),
-#    UNIQUE KEY `invitation_code` (`invitation_code`),
-#    UNIQUE KEY `open_id_UNIQUE` (`open_id`),
-#    KEY `superior` (`superior`)
-#  ) ENGINE=InnoDB AUTO_INCREMENT=31084 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='user'
